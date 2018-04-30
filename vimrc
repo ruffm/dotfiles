@@ -4,50 +4,44 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" let Vundle manage Vundle, required
+
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
-Plugin 'valloric/youcompleteme'
-Plugin 'tpope/vim-dispatch'
-Plugin 'junegunn/seoul256.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'flazz/vim-colorschemes'
 
-" Keep Plugin commands between vundle#begin/end.
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-filetype plugin indent on    " required
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
-let g:seoul256_background = 233
-colo seoul256
 
-syntax enable
-set encoding=utf-8
-set tabstop=4
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+syntax enable       " enable syntax highlight
+colorscheme peaksea         " set colorscheme
+set background=dark
+set encoding=utf-8  " turn on encoding
+set tabstop=4       " tabs = 4 chars
 set softtabstop=4
-set expandtab
-set number
-set showcmd
-set showmatch
-set incsearch
-set hlsearch
-set ignorecase
-set ruler
-set backspace=indent,eol,start
-cmap w!! w !sudo tee > /dev/null %
+set expandtab       " spaces not tabs
+set shiftwidth=4    " indent = a tab
+set number          " show line numbers
+set showcmd         " show the command
+set showmatch       " show matches
+set incsearch       " incremental search
+set hlsearch        " highlight searches
+set ignorecase      " ignore case when searching
+" set ruler           " turn ruler on
+set backspace=indent,eol,start " delete to beginning of line
+set ffs=unix,mac,dos " set default file type
+cmap w!! w !sudo tee > /dev/null % " for sudo only files
 
-if !has('gui_running')
-          set t_Co=256
-  endif
+set laststatus=2 	" for lightline
+set noshowmode 		" lightline
+if !has('gui_running') " lightline
+  set t_Co=256
+endif

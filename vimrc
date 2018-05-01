@@ -25,7 +25,7 @@ syntax enable       " enable syntax highlight
 colorscheme peaksea         " set colorscheme
 set background=dark
 set encoding=utf-8  " turn on encoding
-set tabstop=4       " tabs = 4 chars
+set tabstop=8       " tabs = 4 chars
 set softtabstop=4
 set expandtab       " spaces not tabs
 set shiftwidth=4    " indent = a tab

@@ -12,7 +12,6 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'flazz/vim-colorschemes'
 
-" Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
@@ -25,7 +24,7 @@ syntax enable       " enable syntax highlight
 colorscheme peaksea         " set colorscheme
 set background=dark
 set encoding=utf-8  " turn on encoding
-set tabstop=8       " tabs = 4 chars
+set tabstop=8       
 set softtabstop=4
 set expandtab       " spaces not tabs
 set shiftwidth=4    " indent = a tab

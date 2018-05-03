@@ -6,11 +6,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'w0rp/ale'
+Plugin 'maximbaz/lightline-ale'
+Plugin 'davidhalter/jedi-vim'
 
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -24,7 +26,7 @@ syntax enable       " enable syntax highlight
 colorscheme peaksea         " set colorscheme
 set background=dark
 set encoding=utf-8  " turn on encoding
-set tabstop=8       
+set tabstop=8       " tabs = 4 chars
 set softtabstop=4
 set expandtab       " spaces not tabs
 set shiftwidth=4    " indent = a tab
@@ -44,3 +46,24 @@ set noshowmode 		" lightline
 if !has('gui_running') " lightline
   set t_Co=256
 endif
+
+let g:lightline = {}
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors'
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error'
+      \ }
+
+" let g:lightline = {
+"       \ 'active': {
+"       \ 'right': [['linter_checking', 'linter_errors', 'linter_warnings', 'lineinfo', 'percent', 'fileformat', 'fileencoding', 'filetype']]
+"       \ },
+"      \ }
+

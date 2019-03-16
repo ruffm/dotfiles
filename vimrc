@@ -67,3 +67,4 @@ let g:lightline.component_type = {
 "       \ },
 "      \ }
 
+nmap <C-n> :NERDTreeToggle<CR>

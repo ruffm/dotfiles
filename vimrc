@@ -39,6 +39,10 @@ set ignorecase      " ignore case when searching
 " set ruler           " turn ruler on
 set backspace=indent,eol,start " delete to beginning of line
 set ffs=unix,mac,dos " set default file type
+
+set cc=80
+highlight cc ctermbg=0 guibg=lightgrey
+
 cmap w!! w !sudo tee > /dev/null % " for sudo only files
 
 set laststatus=2 	" for lightline
@@ -60,11 +64,3 @@ let g:lightline.component_type = {
       \     'linter_warnings': 'warning',
       \     'linter_errors': 'error'
       \ }
-
-" let g:lightline = {
-"       \ 'active': {
-"       \ 'right': [['linter_checking', 'linter_errors', 'linter_warnings', 'lineinfo', 'percent', 'fileformat', 'fileencoding', 'filetype']]
-"       \ },
-"      \ }
-
-nmap <C-n> :NERDTreeToggle<CR>
